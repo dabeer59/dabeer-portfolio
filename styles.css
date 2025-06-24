@@ -1117,3 +1117,72 @@ footer a:hover {
         font-size: 0.9rem;
     }
 }
+
+/* Education and Experience Sections */
+.education-section,
+.experience-section {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.education-item,
+.experience-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+.education-item:last-child,
+.experience-item:last-child {
+    margin-bottom: 0;
+}
+
+.education-item h3,
+.experience-item h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.education-item ul,
+.experience-item ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.education-item ul li,
+.experience-item ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.education-item ul li:before,
+.experience-item ul li:before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* Mobile Responsiveness for Education and Experience */
+@media (max-width: 768px) {
+    .education-item h3,
+    .experience-item h3 {
+        font-size: 1rem;
+    }
+
+    .education-item,
+    .experience-item {
+        padding: 0.8rem;
+    }
+
+    .education-item ul li,
+    .experience-item ul li {
+        font-size: 0.9rem;
+    }
+}
