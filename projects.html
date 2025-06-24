@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Syed Dabeer Mehdi Naqvi</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Explore AI and Data Science projects by Syed Dabeer Mehdi Naqvi, including machine learning, computer vision, and NLP applications">
+</head>
+<body>
+    <!-- Particle Container -->
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-section">
+            <h1>AI & Data Science Projects</h1>
+            <p class="subtitle">Innovative Solutions Through Data & AI</p>
+        </section>
+
+        <div class="projects-grid">
+            <article class="project-card">
+                <h2>Vision-Care AI</h2>
+                <p>An advanced computer vision system for early detection of eye diseases using deep learning. Achieved 95% accuracy in identifying common retinal conditions.</p>
+                <p class="tech">Python • TensorFlow • OpenCV • Deep Learning</p>
+                <a href="#">Learn More →</a>
+            </article>
+
+            <article class="project-card">
+                <h2>Cardio-Pulse Guardian</h2>
+                <p>Real-time heart disease prediction system using machine learning and ECG data analysis. Implemented in collaboration with healthcare providers.</p>
+                <p class="tech">Python • Scikit-learn • TensorFlow • Time Series Analysis</p>
+                <a href="#">Learn More →</a>
+            </article>
+
+            <article class="project-card">
+                <h2>AI-Powered Education Chatbot</h2>
+                <p>Intelligent tutoring system using NLP to provide personalized learning assistance. Supports multiple subjects and learning styles.</p>
+                <p class="tech">Python • BERT • Transformers • NLP</p>
+                <a href="#">Learn More →</a>
+            </article>
+
+            <article class="project-card">
+                <h2>Smart Energy Analytics</h2>
+                <p>Power consumption forecasting and optimization using machine learning. Reduced energy costs by 25% for commercial buildings.</p>
+                <p class="tech">Python • Prophet • Pandas • Time Series</p>
+                <a href="#">Learn More →</a>
+            </article>
+
+            <article class="project-card">
+                <h2>Financial Market Predictor</h2>
+                <p>Advanced stock market analysis tool using machine learning and sentiment analysis of financial news.</p>
+                <p class="tech">Python • LSTM • NLP • Financial Analysis</p>
+                <a href="#">Learn More →</a>
+            </article>
+
+            <article class="project-card">
+                <h2>Customer Behavior Analytics</h2>
+                <p>Comprehensive Power BI dashboard analyzing customer behavior patterns and predicting future trends.</p>
+                <p class="tech">Power BI • DAX • SQL • Data Visualization</p>
+                <a href="#">Learn More →</a>
+            </article>
+
+            <article class="project-card">
+                <h2>Supply Chain Optimization</h2>
+                <p>AI-driven supply chain optimization system using reinforcement learning for inventory management.</p>
+                <p class="tech">Python • Reinforcement Learning • Operations Research</p>
+                <a href="#">Learn More →</a>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Email: Dabeer.mehdi59@gmail.com | Phone: 0336-0181685</p>
+            <p>Connect with me on <a href="https://www.linkedin.com/in/dabeer-naqvi-3085711b7" target="_blank">LinkedIn</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Create particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const numberOfParticles = 50;
+
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random position
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                
+                // Random animation duration
+                particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
+                
+                // Random delay
+                particle.style.animationDelay = (Math.random() * 5) + 's';
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Initialize particles
+        createParticles();
+
+        // Recreate particles periodically
+        setInterval(() => {
+            const particles = document.getElementById('particles');
+            particles.innerHTML = '';
+            createParticles();
+        }, 30000);
+
+        // Add animation to project cards on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.5s ease-out';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html> 

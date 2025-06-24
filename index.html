@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Dabeer Mehdi Naqvi - AI & Data Science Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Portfolio of Syed Dabeer Mehdi Naqvi - AI Engineer specializing in Machine Learning, Deep Learning, and Intelligent Systems">
+</head>
+<body>
+    <!-- Particle Container -->
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-section">
+            <img src="1710089454415.jfif" alt="Syed Dabeer Mehdi Naqvi">
+            <h1>Syed Dabeer Mehdi Naqvi</h1>
+            <p class="lead">Data Scientist & AI Consultant</p>
+            <p class="subtitle">Transforming Data into Intelligence</p>
+            
+            <div class="tech-stack">
+                <span class="tech-tag" data-type="ai">
+                    <i class="fas fa-brain"></i>
+                    Machine Learning
+                </span>
+                <span class="tech-tag" data-type="ai">
+                    <i class="fas fa-network-wired"></i>
+                    Deep Learning
+                </span>
+                <span class="tech-tag" data-type="ai">
+                    <i class="fas fa-robot"></i>
+                    Agentic AI
+                </span>
+                <span class="tech-tag" data-type="ai">
+                    <i class="fas fa-eye"></i>
+                    Computer Vision
+                </span>
+                <span class="tech-tag" data-type="ai">
+                    <i class="fas fa-comments"></i>
+                    NLP
+                </span>
+                <span class="tech-tag" data-type="ai">
+                    <i class="fas fa-cogs"></i>
+                    AI Automation
+                </span>
+                <span class="tech-tag" data-type="ai">
+                    <i class="fas fa-microchip"></i>
+                    Neural Architecture
+                </span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Email: Dabeer.mehdi59@gmail.com | Phone: 0336-0181685</p>
+            <p>Connect with me on <a href="https://www.linkedin.com/in/dabeer-naqvi-3085711b7" target="_blank">LinkedIn</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Create particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const numberOfParticles = 50;
+
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random position
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                
+                // Random animation duration
+                particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
+                
+                // Random delay
+                particle.style.animationDelay = (Math.random() * 5) + 's';
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Initialize particles
+        createParticles();
+
+        // Recreate particles periodically
+        setInterval(() => {
+            const particles = document.getElementById('particles');
+            particles.innerHTML = '';
+            createParticles();
+        }, 30000);
+    </script>
+</body>
+</html> 
